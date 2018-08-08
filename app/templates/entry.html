@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{%  block content %}
+  <!-- start of form section -->
+  <form class="container" action="#" method="post">
+    <fieldset class="fieldsize">
+      <h2 class="text_centered">Add a New Entry</h2>
+      <div class="spacing">
+        <input type="text" name="newEntry" id="title" placeholder="Give your Entry a Title" required>
+      </div>
+      <div class="spacing">
+        <textarea name="entryContent" id="content" placeholder="Your contents goes here...." rows="10" cols="70" required></textarea>
+      </div>
+      <div class="spacing">
+        <input class="submit_button" id="white" type="submit" name="submit" value="Add">
+      </div>
+
+    </fieldset>
+  </form>
+  <div class="spacing">
+  </div>
+  <!-- end of form section -->
+  {% endblock %}

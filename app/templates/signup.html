@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Diary - Join</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/main.css') }}">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="branding">
+          <h1><a href="{{url_for('home')}}"><img id= "logo" src="{{ url_for('static',filename='img/c.png') }}" alt="Logo"></a> </h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="{{url_for('landing')}}">Welcome</a></li>
+            <li><a href="{{url_for('signin')}}">Login</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <p class="text_centered">Create a free account today!</p>
+    <p class=" text_centered " id="white"></p>
+    <form class="container" id="signup">
+      <fieldset>
+        <div class="text_centered">
+          <div class="spacing">
+            <input type="text" id="username" placeholder="Username" required>
+          </div>
+          <div class="spacing">
+            <input type="email" id="email" placeholder="Enter Address" required>
+          </div>
+          <div class="spacing">
+            <input type="password" id="password" placeholder="Password" required>
+          </div>
+          <div>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+          </div>
+          <div>
+            <button onclick="signUp()">Sign Up</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/auth.js') }}"></script>
+    <footer id="footer">
+      <p>Diary Copyright &copy 2018</p>
+    </footer>
+
+  </body>
+</html>

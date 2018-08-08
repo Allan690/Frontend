@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Diary - Signin</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/main.css') }}">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="branding">
+          <h1><a href="{{url_for('home')}}"><img id= "logo" src="{{ url_for('static',filename='img/c.png') }}" alt="Logo"></a> </h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="{{url_for('landing')}}">Welcome</a></li>
+            <li><a href="{{url_for('signup')}}">Sign Up</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- start of form section -->
+    <p class="spacing text_centered " id="white"></p>
+    <form class="container" id="signin">
+      <p class="text_centered">One step away to your dashboard</p>
+      <fieldset class="entries">
+      <div class="text_centered">
+        <div class="spacing">
+          <input type="email" id="userEmail" placeholder="Email Address" required>
+        </div>
+        <div class="spacing">
+          <input type="password" id="userPassword" placeholder="Password" required>
+        </div>
+        <div class="spacing">
+          <button onclick="signIn()">Sign in</button>
+
+      </fieldset>
+
+    </form>
+    <div class="spacing">
+    </div><br><br>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/auth.js') }}"></script>
+    <!-- end of form section -->
+    <footer id="footer">
+      <p>Diary Copyright &copy 2018</p>
+    </footer>
+  </body>
+</html>

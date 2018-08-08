@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+  <!-- start of form section -->
+  <div class="text_centered" id="info"></div>
+  <form class="container" id="entry">
+    <fieldset class="fieldsize">
+      <h2 class="text_centered">Modify Entry</h2>
+      <div class="spacing">
+        <input type="text" id="title" placeholder="Give your Entry a Title" required>
+      </div>
+      <div class="spacing">
+        <textarea id="content" placeholder="Your contents goes here...." rows="10" cols="70" required></textarea>
+      </div>
+      <div class="spacing">
+        <span id="add"> <input class="submit_button" id="white" type="submit"  value="Add"> </span>
+        <span id="delete"> <input class="submit_button" id="white" type="submit"  value="Delete"> </span>
+      </div>
+
+    </fieldset>
+  </form>
+  <div class="spacing">
+  </div>
+  <!-- end of form section -->
+  {% endblock %}
