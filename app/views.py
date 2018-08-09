@@ -1,7 +1,7 @@
 from flask import render_template
 from app import app
 
-@app.route('/landing')
+@app.route('/')
 def landing():
     return render_template('landing.html',title ="Welcome")
 
@@ -29,6 +29,6 @@ def detail(entryId):
 def modify(entryId):
     return render_template('modify.html',title ="Modify")
 
-
-
-
+@app.route('/logout')
+def logout():
+    return render_template('landing.html',title ="Welcome")
