@@ -5,33 +5,23 @@
  <!-- start of entries section -->
   <section>
     <div class="text_centered">
-      <h1 id="white">Welcome to Your Dashboard</h1>
+      <h1>Welcome to Your Dashboard</h1>
+      <p class="text_centered" id="msg"></p>
+      <p><span id="total"></span></p>
     </div>
-    <div>
-      <fieldset class=" text_centered ">
+    <!-- <div  class=" text_centered "> -->
+      <!-- <fieldset class=" text_centered "> -->
         <div class="dashboard">
-          <h2>Memory... is the diary that we all carry about with us.</h2>
-          <table>
-            <tr>
-              <th>Date</th>
-              <th colspan="2">Entries</th>
-            </tr>
-            <tr>
-              <td class="td-width">11-07-2018</td>
-              <td> <a href="detail.html">Attending a seminar</a></td>
-            </tr>
-            <tr>
-              <td>12-07-2018</td>
-              <td> <a href="detail.html">Going to church</a> </td>
-            </tr>
-            <tr>
-              <td>13-07-2018</td>
-              <td> <a href="detail.html"> Free day</a></td>
-            </tr>
-          </table>
+            <table id="entries-list">
+                <tr>
+                    <th>Date</th>
+                    <th>Entries</th>
+                    <th colspan="2">Action</th>
+                  </tr>
+            </table>
         </div>
-      </fieldset>
-    </div>
+      <!-- </fieldset> -->
+    <!-- </div> -->
   </section>
-
+  <script type="text/javascript" src="{{ url_for('static', filename='js/fetch.js') }}"></script>
   {% endblock %}

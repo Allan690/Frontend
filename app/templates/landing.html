@@ -6,11 +6,11 @@
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/main.css') }}">
   </head>
   <body>
-    <div class="landing text_centered">
-      <h1>Write in Private</h1>
-      <p><h1 id="white"> Welcome to your online diary</h1></p>
-      <p><h2 id="white">No pen or notebook anymore</h2> </p>
-      <p><h3 id="white">You only need a free account</h3> </p>
+    <div class="landing text_centered ">
+      <p><h1> Welcome to your online diary</h1></p>
+      <div><h2>This is an online journal where users can pen down their thoughts and feelings.</h2></div>
+      <p><h3>No pen or notebook anymore</h3> </p>
+      <p><h4>You only need a free account</h4> </p>
       <div>
         <input type="button" class="MyButton" value="Login" onclick="window.location.href='{{url_for('signin')}}'" />
         <input type="button"class="MyButton" value="Join Now" onclick="window.location.href='{{url_for('signup')}}'" />

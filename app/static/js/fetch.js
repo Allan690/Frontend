@@ -11,20 +11,27 @@ fetch('https://diaryapi-v2.herokuapp.com/mydiary/v1/entries',{
 })
 .then(res =>res.json())
 .then(data => {
-  console.log(data.all_entries);
-  let entries = data.all_entries
-  let i;
-    for (i = entries.length-1;i>0; i--) {
-      console.log(entries.length)
-      document.getElementById('entries-list').innerHTML +=  `
-      <tr>
-      <td>${entries[i].date}</td>
-      <td>${entries[i].title}</td>
-      <td><li><a href="/detail/${entries[i].id}"> View</a></li></td>
-      <td><li><a href="/modify/${entries[i].id}"> Edit</a></li></td>
-      </tr>`
 
-    }
-    document.getElementById('total').innerHTML = entries.length;
+  if (data.message === "Your diary is empty"){
+    let msg = 'All your entries will appear here.'
+    document.getElementById('total').innerHTML = msg;
+  }
+
+  else {
+    let entries = data.all_entries
+    let i;
+      for (i = 0; i < entries.length; i++) {
+        document.getElementById('entries-list').innerHTML +=  `
+        <tr>
+        <td>${entries[i].date}</td>
+        <td>${entries[i].title}</td>
+        <td><li><a href="/detail/${entries[i].id}"> View</a></li></td>
+        <td><li><a href="/modify/${entries[i].id}"> Edit</a></li></td>
+        </tr>`
+
+      }
+      let msg = "Total entries "
+      document.getElementById('total').innerHTML = msg + entries.length;
+  }
 
 });

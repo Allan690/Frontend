@@ -56,7 +56,8 @@ const signIn = () => {
       .then(res => res.json())
       .then(data => {
         let res = Object.values(data);
-        const access_token = res[0];
+        console.log(res[1])
+        const access_token = res[1];
         if (data.token === access_token) {
           msg = "Login was successful";
           document.getElementById('white').innerHTML = msg;
@@ -73,4 +74,10 @@ const signIn = () => {
 
   });
 
+}
+
+// logout user
+const logout = () =>{
+let a = document.getElementById('logout');
+a.onclick = () => {localStorage.removeItem("token")};
 }

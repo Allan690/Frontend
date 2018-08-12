@@ -2,20 +2,15 @@
 {% block content %}
   <!-- start of article section -->
   <article>
-    <div class="text_centered">
-      <h1 id="white">Attending a seminar</h1></div>
+    <p><h1 id="white"></h1></p>
     <div class="container">
-      <p id="white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni aut iure tenetur. Odit exercitationem ipsa facere reiciendis repellendus adipisci nesciunt, ea nihil necessitatibus non voluptate voluptatem et dolorum consectetur nostrum Lorem ipsum
-        dolor sit amet, consectetur adipisicing elit. Magni aut iure tenetur. Odit exercitationem ipsa facere reiciendis repellendus adipisci nesciunt, ea nihil necessitatibus non voluptate voluptatem et dolorum consectetur nostrum Lorem ipsum dolor sit
-        amet, consectetur adipisicing elit. Magni aut iure tenetur. Odit exercitationem ipsa facere reiciendis repellendus adipisci nesciunt, ea nihil necessitatibus non voluptate voluptatem et dolorum consectetur nostrum Lorem ipsum dolor sit amet, consectetur
-        adipisicing elit. Magni aut iure tenetur. Odit exercitationem ipsa facere reiciendis repellendus adipisci nesciunt, ea nihil necessitatibus non voluptate voluptatem et dolorum consectetur nostrum?</p>
+      <h1 id="title"></h1>
+      <h3 id="date"></h3>
+      <p id="content"></p>
     </div>
-    <div class="spacing text_centered">
-      <span id="delete"><button>Update</button></span>
-      <span id="update"><button>Delete</button></span>
-
-    </div>
+      <span id="delete"> <button onclick="deleteEntry()">delete</button></span>
   </article>
-
+  <script type="text/javascript" src="{{ url_for('static', filename='js/single.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/delete.js') }}"></script>
   <!-- end of article section -->
 {% endblock %}

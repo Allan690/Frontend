@@ -2,7 +2,8 @@
 {% block content %}
   <!-- start of form section -->
   <div class="text_centered" id="info"></div>
-  <form class="container" id="entry">
+  <p id="white" class="text_centered"></p>
+  <form class="container" id="modify">
     <fieldset class="fieldsize">
       <h2 class="text_centered">Modify Entry</h2>
       <div class="spacing">
@@ -12,13 +13,14 @@
         <textarea id="content" placeholder="Your contents goes here...." rows="10" cols="70" required></textarea>
       </div>
       <div class="spacing">
-        <span id="add"> <input class="submit_button" id="white" type="submit"  value="Add"> </span>
-        <span id="delete"> <input class="submit_button" id="white" type="submit"  value="Delete"> </span>
+    <button onclick="modify()">update</button>
       </div>
 
     </fieldset>
   </form>
   <div class="spacing">
   </div>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/modify.js') }}"></script>
+
   <!-- end of form section -->
   {% endblock %}

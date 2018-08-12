@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 {%  block content %}
   <!-- start of form section -->
-  <form class="container" action="#" method="post">
+  <form class="container" id="entry">
+    <p id="white" class="text_centered"></p>
     <fieldset class="fieldsize">
-      <h2 class="text_centered">Add a New Entry</h2>
+      <h2 class="text_centered">New Entry</h2>
       <div class="spacing">
         <input type="text" name="newEntry" id="title" placeholder="Give your Entry a Title" required>
       </div>
@@ -11,12 +12,12 @@
         <textarea name="entryContent" id="content" placeholder="Your contents goes here...." rows="10" cols="70" required></textarea>
       </div>
       <div class="spacing">
-        <input class="submit_button" id="white" type="submit" name="submit" value="Add">
+        <button onclick="add()">Add</button>
       </div>
-
     </fieldset>
   </form>
   <div class="spacing">
   </div>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/add.js') }}"></script>
   <!-- end of form section -->
   {% endblock %}
