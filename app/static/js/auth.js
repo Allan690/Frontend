@@ -56,8 +56,8 @@ const signIn = () => {
       .then(res => res.json())
       .then(data => {
         let res = Object.values(data);
-        console.log(res[1])
-        const access_token = res[1];
+        console.log(res[0])
+        const access_token = res[0];
         if (data.token === access_token) {
           msg = "Login was successful";
           document.getElementById('white').innerHTML = msg;
