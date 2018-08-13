@@ -4,7 +4,7 @@ if(token === null){
   }
 
 else {
-const add = () => {
+add = () => {
 document.getElementById("entry").addEventListener("submit", function (e) {
     e.preventDefault();
     data = {

@@ -183,7 +183,7 @@ table {
 table a {
   text-decoration: none;
   text-transform: capitalize;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 table a:hover {
@@ -193,7 +193,7 @@ table a:hover {
 
 table tr, td, th {
   text-align: left;
-  font-size: 30px;
+  font-size: 20px;
   color: black;
 }
 

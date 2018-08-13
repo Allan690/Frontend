@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch(err => console.log(err));
 });
 
-const modify = () => {
+    modify = () => {
     document.getElementById("modify").addEventListener("submit", (event) => {
         event.preventDefault();
     const token = localStorage.getItem("token");

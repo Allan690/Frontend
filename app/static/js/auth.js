@@ -1,6 +1,6 @@
 // Register new user
 
-const signUp = () => {
+signUp = () => {
   document.getElementById("signup").addEventListener("submit", function(e) {
     e.preventDefault();
     data = {
@@ -37,7 +37,7 @@ const signUp = () => {
 }
 // Login existing users
 
-const signIn = () => {
+ signIn = () => {
   document.getElementById('signin').addEventListener('submit', function(e) {
     e.preventDefault();
 

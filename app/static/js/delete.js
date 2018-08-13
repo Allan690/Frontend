@@ -3,7 +3,7 @@ if(token === null){
   window.location.href = '/signin';
   }
  else{
-  const deleteEntry = () => {
+  deleteEntry = () => {
     if (!confirm(`Are you sure want to delete this entry?`))
              return false;
     else{
