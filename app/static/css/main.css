@@ -4,7 +4,7 @@
 
 body {
   font-family: sans-serif, Arial, Helvetica;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.5;
   margin: 0px;
   padding: 0px;
@@ -26,6 +26,8 @@ h5 a:hover {
 
 .fieldsize {
   width: 65%;
+  height: auto;
+  font-size: 20px;
 }
 
 a {
@@ -160,12 +162,6 @@ section li {
   text-transform: capitalize;
 }
 
-section fieldset {
-  min-width: 80%;
-  /* background-color: rgb(199, 199, 173); */
-}
-
-}
 
 section img {
   width: 60%;
@@ -177,7 +173,7 @@ table {
   width: 95%;
   margin: auto;
   margin-top: 30px;
-  margin-bottom: 55px;
+  margin-bottom: 90px;
   color: #ffffff;
   background-color: #F2F4F4
 }
@@ -196,7 +192,6 @@ table a:hover {
 table tr, td, th {
   text-align: left;
   font-size: 30px;
-  padding: 15px;
   color: black;
 }
 table tr:nth-child(even){background-color: #f2f2f2;}
@@ -271,4 +266,14 @@ input.MyButton:hover {
 color: #ffffff;
 background: #000;
 border: 1px solid #fff;
+}
+
+input,textarea , select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
