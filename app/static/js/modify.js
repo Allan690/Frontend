@@ -1,3 +1,9 @@
+token = localStorage.getItem("token");
+if(token === null){
+  window.location.href = '/signin';
+  }
+else {
+
 document.addEventListener('DOMContentLoaded', () => {
     title = document.getElementById('title');
     content = document.getElementById('content');
@@ -62,3 +68,4 @@ const modify = () => {
         .catch(err => console.log(err));
     });
     }
+}

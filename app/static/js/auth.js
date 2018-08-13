@@ -76,8 +76,3 @@ const signIn = () => {
 
 }
 
-// logout user
-const logout = () =>{
-let a = document.getElementById('logout');
-a.onclick = () => {localStorage.removeItem("token")};
-}

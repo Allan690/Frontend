@@ -1,3 +1,9 @@
+token = localStorage.getItem("token");
+if(token === null){
+  window.location.href = '/signin';
+  }
+
+else {
 const add = () => {
 document.getElementById("entry").addEventListener("submit", function (e) {
     e.preventDefault();
@@ -34,6 +40,7 @@ fetch('https://diaryapi-v2.herokuapp.com/mydiary/v1/entries',{
         .catch(error => console.error("Error:", error));
 
   });
+}
 }
 
 

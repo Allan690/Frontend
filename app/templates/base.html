@@ -23,7 +23,8 @@
       <nav>
         <ul>
           <li><a href="{{url_for('entry')}}">New Entry</a></li>
-          <li><a id="logout" href="{{url_for('logout')}}">Logout</a></li>
+          <!-- <li><a id="logout" href="{{url_for('logout')}}">Logout</a></li> -->
+          <a href="{{url_for('landing')}}" onclick="localStorage.clear()">logout</a>
         </ul>
       </nav>
     </div>
@@ -37,6 +38,7 @@
   <footer id="footer">
     <p>Online Diary Copyright &copy 2018</p>
   </footer>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/auth.js') }}"></script>
   <!-- end of footer section -->
 </body>
 

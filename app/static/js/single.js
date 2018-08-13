@@ -1,4 +1,9 @@
 token = localStorage.getItem("token");
+if(token === null){
+  window.location.href = '/signin';
+  }
+else{
+token = localStorage.getItem("token");
 const entryId = Number(location.pathname.match(/\d+/)[0])
 const url = `https://diaryapi-v2.herokuapp.com/mydiary/v1/entries/${entryId}`;
 fetch(`${url}`, {
@@ -17,3 +22,4 @@ fetch(`${url}`, {
     document.getElementById("content").innerHTML = data[msg][3];
 
   });
+}

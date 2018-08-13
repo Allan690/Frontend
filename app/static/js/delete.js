@@ -1,3 +1,8 @@
+token = localStorage.getItem("token");
+if(token === null){
+  window.location.href = '/signin';
+  }
+ else{
   const deleteEntry = () => {
     if (!confirm(`Are you sure want to delete this entry?`))
              return false;
@@ -24,5 +29,6 @@
           document.getElementById("white").innerHTML = msg;
         }
 }).catch(err => console.log(err));
+}
 }
 }
