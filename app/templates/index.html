@@ -1,23 +1,21 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block content %}
 
-{% block content %}
-
- <!-- start of entries section -->
-  <section>
-    <div class="text_centered">
-      <h1>Welcome to Your Dashboard</h1>
-      <p class="text_centered" id="msg"></p>
-      <p><span id="total"></span></p>
-    </div>
-        <div class="dashboard">
-            <table id="entries-list">
-                <tr>
-                    <th>Date created</th>
-                    <th>Entries</th>
-                    <th colspan="2">Actions</th>
-                  </tr>
-            </table>
-        </div>
-  </section>
-  <script type="text/javascript" src="{{ url_for('static', filename='js/fetch.js') }}"></script>
-  {% endblock %}
+<!-- start of entries section -->
+<section>
+  <div class="text_centered">
+    <h1>Welcome to Your Dashboard</h1>
+    <p class="text_centered" id="msg"></p>
+    <p><span id="total"></span></p>
+  </div>
+  <div class="dashboard">
+    <table id="entries-list">
+      <tr>
+        <th>Date created</th>
+        <th>Entries</th>
+        <th>Update</th>
+      </tr>
+    </table>
+  </div>
+</section>
+<script type="text/javascript" src="{{ url_for('static', filename='js/fetch.js') }}"></script>
+{% endblock %}
