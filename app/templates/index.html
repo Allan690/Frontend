@@ -9,19 +9,15 @@
       <p class="text_centered" id="msg"></p>
       <p><span id="total"></span></p>
     </div>
-    <!-- <div  class=" text_centered "> -->
-      <!-- <fieldset class=" text_centered "> -->
         <div class="dashboard">
             <table id="entries-list">
                 <tr>
-                    <th>Date</th>
+                    <th>Date created</th>
                     <th>Entries</th>
-                    <th colspan="2">Action</th>
+                    <th colspan="2">Actions</th>
                   </tr>
             </table>
         </div>
-      <!-- </fieldset> -->
-    <!-- </div> -->
   </section>
   <script type="text/javascript" src="{{ url_for('static', filename='js/fetch.js') }}"></script>
   {% endblock %}
