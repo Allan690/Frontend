@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
           let msg = Object.values(data);
           console.log(msg)
-          document.getElementById("white").innerHTML = msg;
+          document.getElementById("info").innerHTML = msg;
         }
         })
         .catch(err => console.log(err));

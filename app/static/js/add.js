@@ -28,28 +28,17 @@ fetch('https://diaryapi-v2.herokuapp.com/mydiary/v1/entries',{
             console.log(data.message)
             if(data.message === "successfully added"){
                 let msg = data.message;
-                document.getElementById("white").innerHTML = msg;
+                document.getElementById("info").innerHTML = msg;
                 window.location.href = "/home";
             }
             else{
                 let msg = Object.values(data);
-                document.getElementById("white").innerHTML = msg;
+                document.getElementById("info").innerHTML = msg;
             }
         })
 
-        .catch(error => console.error("Error:", error));
+        .catch(error => console.log( error));
 
   });
 }
 }
-
-
-
-
-
-
-
-
-
-
-

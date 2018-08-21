@@ -22,16 +22,16 @@ signUp = () => {
       .then(data => {
         if (data.message === "Your account was created") {
           let msg = data.message;
-          document.getElementById("white").innerHTML = msg;
+          document.getElementById("info").innerHTML = msg;
           window.location.href = "/signin";
         } else {
           let msg = Object.values(data);
           console.log(msg)
-          document.getElementById("white").innerHTML = msg;
+          document.getElementById("info").innerHTML = msg;
         }
 
       })
-      .catch(error => console.error("Error:", error));
+      .catch(error => console.log(error));
   });
 
 }
@@ -60,19 +60,18 @@ signUp = () => {
         const access_token = res[0];
         if (data.token === access_token) {
           msg = "Login was successful";
-          document.getElementById('white').innerHTML = msg;
+          document.getElementById('info').innerHTML = msg;
           localStorage.setItem('token', access_token);
           window.location.href = "/home";
         } else {
           let msg = Object.values(data);
           console.log(msg)
-          document.getElementById('white').innerHTML = msg;
+          document.getElementById('info').innerHTML = msg;
         }
 
       })
-    .catch(error => console.error("Error:", error));
+    .catch(error => console.log(error));
 
   });
 
 }
-

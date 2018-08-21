@@ -21,12 +21,12 @@ if(token === null){
     .then(data => {
         if (data.message == "Your entry was successfully deleted"){
             let msg = "Entry was deleted from your diary";
-            document.getElementById('white').innerHTML = msg;
+            document.getElementById('info').innerHTML = msg;
             window.location.href = '/home';
         }
         else {
           let msg = Object.values(data);
-          document.getElementById("white").innerHTML = msg;
+          document.getElementById("info").innerHTML = msg;
         }
 }).catch(err => console.log(err));
 }
