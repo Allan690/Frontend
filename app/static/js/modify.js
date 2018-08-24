@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
           document.getElementById("info").innerHTML = msg;
         }
         })
-        .catch(err => console.log(err));
+        .catch(err => console.error(err));
     });
     }
 }

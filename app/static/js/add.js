@@ -37,7 +37,7 @@ fetch('https://diaryapi-v2.herokuapp.com/mydiary/v1/entries',{
             }
         })
 
-        .catch(error => console.log( error));
+        .catch(error => console.error(error));
 
   });
 }
