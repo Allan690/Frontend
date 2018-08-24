@@ -1,0 +1,291 @@
+/* This styles have been used to style all pages */
+
+/* body css styles are applied to the entire content  */
+
+body {
+  font-family: sans-serif, Arial, Helvetica;
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0px;
+  padding: 0px;
+  background: url(../img/pen.jpg);
+}
+
+/*  Global css styles are style that can be in any part of  the page*/
+
+h5 a:hover {
+  color: white;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  height: 100%;
+}
+
+p {
+  font-size: 22px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+a:hover {
+  color: black;
+}
+
+.text_centered {
+  text-align: center;
+}
+
+.dashboard {
+  overflow-x: auto;
+}
+
+.submit_button {
+  background: #000;
+  height: 40px;
+  width: 90px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.spacing {
+  margin: 20px;
+  padding-bottom: 5px;
+}
+
+.entries {
+  padding: 20px;
+}
+
+.div-col {
+  background-color: #F2F4F4;
+}
+
+h1, h2, h3 {
+  text-transform: capitalize;
+  margin: 0px;
+  padding: 0px;
+  color: #000;
+}
+
+#white {
+  color: black;
+}
+
+/* Header css are specific to the Header and its children  */
+
+header {
+  background: black;
+  color: #ffffff;
+  min-height: 50px;
+  padding-bottom: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif
+}
+
+header li {
+  float: left;
+  display: inline;
+  padding: 0px 20px 0px 20px;
+}
+
+header #logo {
+  float: left;
+  height: 60px;
+  width: 150px;
+  margin-top: 7px;
+}
+
+header #branding h1 {
+  margin: 0;
+}
+
+header nav {
+  float: right;
+}
+
+header .highlight, header .current {
+  color: black;
+}
+
+header a:hover {
+  color: #3366cc;
+  font-weight: bold;
+}
+
+/* footer css styles are specific to the footer*/
+
+#footer {
+  position: fixed;
+  height: 50px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+  padding-bottom: 10px;
+  background-color: black;
+}
+
+/* css styles for styling fieldsets */
+
+fieldset {
+  width: 50%;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 25px;
+  /* border: 2px solid white; */
+}
+
+/* css styles for styling section element */
+
+section a {
+  text-decoration: none;
+}
+
+section li {
+  display: inline;
+  text-transform: capitalize;
+}
+
+section img {
+  width: 60%;
+}
+
+/* These styles are specific to tables and its siblings */
+
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 95%;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 90px;
+  color: #ffffff;
+  background-color: #F2F4F4;
+}
+
+table a {
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 20px;
+}
+
+table a:hover {
+  color: blue;
+  font-weight: bold;
+}
+
+table tr, td, th {
+  text-align: left;
+  font-size: 20px;
+  color: black;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+table th {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  text-align: left;
+  background-color: black;
+  color: white;
+}
+
+.td-width {
+  width: 20%;
+}
+
+/*  article CSS styles */
+
+article {
+  margin: 30px;
+}
+
+article span {
+  padding: 20px;
+}
+
+article span button:hover {
+  color: rgb(0, 140, 255);
+}
+
+button {
+  width: 150px;
+  height: 40px;
+  margin: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 150%;
+  background: #3366cc;
+  color: #fff;
+  border: 1px solid #3366cc;
+  border-radius: 10px;
+  box-shadow: : 6px 6px 5px #999;
+}
+
+button:hover {
+  color: #ffffff;
+  background: #000;
+  border: 1px solid #fff;
+}
+
+.landing {
+  /* background-color: black; */
+  padding: 20px;
+  margin-top: 2%;
+  margin-left: 10%;
+  height: 400px;
+  width: 80%;
+}
+
+input.MyButton {
+  width: 200px;
+  padding: 25px;
+  margin: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 130%;
+  background: #3366cc;
+  color: #fff;
+  border: 1px solid #3366cc;
+  border-radius: 10px;
+  box-shadow: : 6px 6px 5px #999;
+}
+
+input.MyButton:hover {
+  color: #ffffff;
+  background: #000;
+  border: 1px solid #fff;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}

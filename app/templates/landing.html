@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Diary - Welcome</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/main.css') }}">
+  </head>
+  <body>
+    <div class="landing text_centered spacing ">
+      <p><h1> Welcome to your online diary</h1></p>
+      <div><h2>This is an online journal where users can pen down their thoughts and feelings.</h2></div>
+      <p><h3>No pen or notebook anymore</h3> </p>
+      <p><h4>You only need a free account</h4> </p>
+      <div>
+        <input type="button" class="MyButton" value="Login" onclick="window.location.href='{{url_for('signin')}}'" />
+        <input type="button"class="MyButton" value="Join Now" onclick="window.location.href='{{url_for('signup')}}'" />
+      </div>
+
+
+    </div>
+    <!-- start of footer section -->
+    <footer id="footer">
+      <p>Online Diary Copyright &copy 2018</p>
+    </footer>
+    <!-- end of footer section -->
+  </body>
+</html>

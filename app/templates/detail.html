@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %}
+<!-- start of article section -->
+<article>
+  <p>
+    <h4 id="white" class="text_centered"></h4></p>
+  <div class="container div-col text_centered">
+    <h1 id="title"></h1>
+    <h3 id="date"></h3>
+    <p id="content"></p>
+  </div>
+  <div class="container"><span id="delete"> <button onclick="deleteEntry()">delete</button></span></div>
+</article>
+<script type="text/javascript" src="{{ url_for('static', filename='js/single.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/delete.js') }}"></script>
+<!-- end of article section -->
+{% endblock %}

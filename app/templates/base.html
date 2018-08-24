@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="chariss chomba">
+  <meta name="viewpoint" content="width=device-width">
+  {% if title %}
+    <title>Diary - {{title}}</title>
+  {% else %}
+    <title> Diary</title>
+  {% endif %}
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/main.css') }}">
+</head>
+
+<body>
+  <!-- start of header section-->
+  <header>
+    <div class="container">
+      <div id="branding">
+        <h1><a href="{{url_for('home')}}"><img id= "logo" src="{{ url_for('static',filename='img/logo.png') }}" alt="Logo"></a> </h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="{{url_for('entry')}}">New Entry</a></li>
+          <!-- <li><a id="logout" href="{{url_for('logout')}}">Logout</a></li> -->
+          <a href="{{url_for('landing')}}" onclick="localStorage.clear()">logout</a>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!--  end of header section-->
+  {% block content %}
+
+  {% endblock %}
+
+  <!-- start of footer section -->
+  <footer id="footer">
+    <p>Online Diary Copyright &copy 2018</p>
+  </footer>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/auth.js') }}"></script>
+  <!-- end of footer section -->
+</body>
+
+</html>

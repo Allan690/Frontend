@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+<!-- start of form section -->
+<div class="text_centered" id="info"></div>
+<p id="white" class="text_centered"></p>
+<form class="container" id="modify">
+  <h2 class="text_centered">Modify Entry</h2>
+  <div class="spacing">
+    <input type="text" id="title" placeholder="Give your Entry a Title" required>
+  </div>
+  <div class="spacing">
+    <textarea id="content" placeholder="Your contents goes here...." rows="10" cols="70" required></textarea>
+  </div>
+  <div class="spacing">
+    <button onclick="modify()">update</button>
+  </div>
+</form>
+<div class="spacing">
+</div>
+<script type="text/javascript" src="{{ url_for('static', filename='js/modify.js') }}"></script>
+
+<!-- end of form section -->
+{% endblock %}
