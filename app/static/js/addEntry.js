@@ -1,18 +1,24 @@
+// Gets stored token in the browser storage
 token = localStorage.getItem("token");
+// Checks whether the user is authenticated
 if(token === null){
-  window.location.href = '/signin';
+  window.location.assign('/signin');
   }
 
 else {
-add = () => {
+// Gets data from the form inputs if the user is authenticated.
 document.getElementById("entry").addEventListener("submit", function (e) {
     e.preventDefault();
     data = {
         title: document.getElementById("title").value,
         content: document.getElementById("content").value
     };
-
-token = localStorage.getItem("token");
+// Calls this function for entry processing
+    addEntry();
+  });
+}
+// Sends the added entry to they server for processing.
+const addEntry = () => {
 fetch('https://diaryapi-v2.herokuapp.com/mydiary/v1/entries',{
   method:"POST",
   headers:{
@@ -25,20 +31,16 @@ fetch('https://diaryapi-v2.herokuapp.com/mydiary/v1/entries',{
         .then(res => res.json())
 
         .then(data => {
-            console.log(data.message)
             if(data.message === "successfully added"){
                 let msg = data.message;
                 document.getElementById("info").innerHTML = msg;
-                window.location.href = "/home";
+                window.location.assign("/home");
             }
             else{
                 let msg = Object.values(data);
                 document.getElementById("info").innerHTML = msg;
             }
         })
-
+// catches any error that may occur.
         .catch(error => console.error(error));
-
-  });
-}
-}
+    };
