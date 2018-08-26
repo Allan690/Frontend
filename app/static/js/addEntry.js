@@ -1,24 +1,16 @@
-// Gets stored token in the browser storage
-token = localStorage.getItem("token");
-// Checks whether the user is authenticated
-if(token === null){
-  window.location.assign('/signin');
-  }
-
-else {
+token = localStorage.getItem('token')
 // Gets data from the form inputs if the user is authenticated.
 document.getElementById("entry").addEventListener("submit", function (e) {
     e.preventDefault();
-    data = {
+    const data = {
         title: document.getElementById("title").value,
         content: document.getElementById("content").value
     };
 // Calls this function for entry processing
-    addEntry();
+    addEntry(data);
   });
-}
 // Sends the added entry to they server for processing.
-const addEntry = () => {
+const addEntry = (data) => {
 fetch('https://diaryapi-v2.herokuapp.com/mydiary/v1/entries',{
   method:"POST",
   headers:{

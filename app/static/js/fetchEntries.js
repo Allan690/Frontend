@@ -1,9 +1,4 @@
 token = localStorage.getItem("token");
-if(token === null){
-  window.location.href = '/signin';
-  }
-
-else {
 fetch('https://diaryapi-v2.herokuapp.com/mydiary/v1/entries', {
     method: "GET",
     headers: {
@@ -35,4 +30,3 @@ fetch('https://diaryapi-v2.herokuapp.com/mydiary/v1/entries', {
     }
 
   });
-}

@@ -1,5 +1,4 @@
 // Register new user
-
 signUp = () => {
   document.getElementById("signup").addEventListener("submit", function(e) {
     e.preventDefault();
@@ -9,7 +8,7 @@ signUp = () => {
       password: document.getElementById("password").value,
       confirm_password: document.getElementById("confirmPassword").value,
     };
-
+    // send registration details to the server
     fetch("https://diaryapi-v2.herokuapp.com/mydiary/v1/auth/register", {
         method: "POST",
         headers: {
@@ -31,12 +30,12 @@ signUp = () => {
         }
 
       })
+      // catch error that may occur
       .catch(error => console.log(error));
   });
 
 }
 // Login existing users
-
  signIn = () => {
   document.getElementById('signin').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -45,7 +44,7 @@ signUp = () => {
       email: document.getElementById("userEmail").value,
       password: document.getElementById("userPassword").value
     };
-
+    // send login details to the server
     fetch("https://diaryapi-v2.herokuapp.com/mydiary/v1/auth/login", {
         method: "POST",
         headers: {
@@ -70,6 +69,7 @@ signUp = () => {
         }
 
       })
+    // catch error that may occur
     .catch(error => console.error(error));
 
   });

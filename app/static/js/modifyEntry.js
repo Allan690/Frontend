@@ -1,14 +1,10 @@
-token = localStorage.getItem("token");
-if(token === null){
-  window.location.href = '/signin';
-  }
-else {
+const token = localStorage.getItem('token');
+const entryId = Number(location.pathname.match(/\d+/)[0]);
 
 document.addEventListener('DOMContentLoaded', () => {
     title = document.getElementById('title');
     content = document.getElementById('content');
     const token = localStorage.getItem("token");
-    const entryId = Number(location.pathname.match(/\d+/)[0])
     const url = `https://diaryapi-v2.herokuapp.com/mydiary/v1/entries/${entryId}`;
     fetch(`${url}`,{
       method:"GET",
@@ -27,11 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch(err => console.log(err));
 });
 
-    modify = () => {
+   const modify = () => {
     document.getElementById("modify").addEventListener("submit", (event) => {
         event.preventDefault();
-    const token = localStorage.getItem("token");
-    const entryId = Number(location.pathname.match(/\d+/)[0])
     const url = `https://diaryapi-v2.herokuapp.com/mydiary/v1/entries/${entryId}`;
     const title = document.getElementById('title');
     const content = document.getElementById('content');
@@ -67,5 +61,4 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(err => console.error(err));
     });
-    }
-}
+    };
