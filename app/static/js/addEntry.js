@@ -19,6 +19,7 @@ fetch('https://diaryapi-v2.herokuapp.com/mydiary/v1/entries',{
   },
   body: JSON.stringify(data)
 
+
 })
         .then(res => res.json())
 
