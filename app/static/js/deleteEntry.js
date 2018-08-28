@@ -16,12 +16,12 @@
     .then(data => {
         if (data.message == "Your entry was successfully deleted"){
             let msg = "Entry was deleted from your diary";
-            document.getElementById('info').innerHTML = msg;
+            document.getElementById('success').innerHTML = msg;
             window.location.href = '/home';
         }
         else {
           let msg = Object.values(data);
-          document.getElementById("info").innerHTML = msg;
+          document.getElementById("fail").innerHTML = msg;
         }
 }).catch(err => console.error(err));
 }};

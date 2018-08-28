@@ -50,13 +50,14 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(data.message)
         if (data.message === "Entry Updated successfully"){
         let msg = data.message;
+        document.getElementById("success").innerHTML = msg;
         window.location.href = `/detail/${entryId}`;
         }
         else
         {
           let msg = Object.values(data);
           console.log(msg)
-          document.getElementById("info").innerHTML = msg;
+          document.getElementById("fail").innerHTML = msg;
         }
         })
         .catch(err => console.error(err));

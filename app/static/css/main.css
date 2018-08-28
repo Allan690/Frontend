@@ -242,7 +242,7 @@ button {
   color: #fff;
   border: 1px solid #3366cc;
   border-radius: 10px;
-  box-shadow: : 6px 6px 5px #999;
+  box-shadow: 6px 6px 5px #999;
 }
 
 button:hover {
@@ -292,4 +292,23 @@ input, textarea, select {
 
 .info{
   color: blue;
+}
+
+#success{
+  height: 20px;
+  color: blue;
+  border-radius: 20px;
+  font-weight: bold;
+}
+#fail{
+  height: 20px;
+  color: red;
+  border-radius: 20px;
+  font-weight: bold;
+}
+.processing{
+  height: 20px;
+  color: green;
+  border-radius: 20px;
+  font-weight: bold;
 }
