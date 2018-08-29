@@ -59,4 +59,45 @@ describe('singup', () => {
     expect(document.getElementById('white').innerHTML).toBe('Your account was created');
   });
 
+
+  it('tests if password match ', async () => {
+    document.getElementById('password').value = 'Wrong password';
+    fetchMock = jest.spyOn(global, 'fetch');
+    fetchMock.mockImplementation(() => Promise.resolve({
+      json: () => Promise.resolve({ message: 'Double check your password'})
+    }));
+    document.getElementById('submitbutton').click();
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    const fetchArgs = fetchMock.mock.calls[0];
+    expect(fetchArgs[0]).toBe('https://diaryapi-v2.herokuapp.com/mydiary/v1/auth/register');
+    await Promise.resolve().then();
+    expect(document.getElementById('white').innerHTML).toBe('Double check your password');
+  });
+
+  it('test if password are 8 characters', async () => {
+    document.getElementById('password').value = 'Wrong';
+    fetchMock = jest.spyOn(global, 'fetch');
+    fetchMock.mockImplementation(() => Promise.resolve({
+      json: () => Promise.resolve({ message: 'Password length should be atleast 8 characters'})
+    }));
+    document.getElementById('submitbutton').click();
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    const fetchArgs = fetchMock.mock.calls[0];
+    expect(fetchArgs[0]).toBe('https://diaryapi-v2.herokuapp.com/mydiary/v1/auth/register');
+    await Promise.resolve().then();
+    expect(document.getElementById('white').innerHTML).toBe('Password length should be atleast 8 characters');
+  });
+  it('test registration with exixting email', async () => {
+    document.getElementById('email').value = 'the email';
+    fetchMock = jest.spyOn(global, 'fetch');
+    fetchMock.mockImplementation(() => Promise.resolve({
+      json: () => Promise.resolve({ message: 'User with email: teezjay11@gmail.com exists'})
+    }));
+    document.getElementById('submitbutton').click();
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    const fetchArgs = fetchMock.mock.calls[0];
+    expect(fetchArgs[0]).toBe('https://diaryapi-v2.herokuapp.com/mydiary/v1/auth/register');
+    await Promise.resolve().then();
+    expect(document.getElementById('white').innerHTML).toBe('User with email: teezjay11@gmail.com exists');
+  })
 });
