@@ -54,7 +54,7 @@ a:hover {
 }
 
 .spacing {
-  margin: 20px;
+  margin: 15px;
   padding-bottom: 5px;
 }
 
@@ -299,12 +299,14 @@ input, textarea, select {
   color: blue;
   border-radius: 20px;
   font-weight: bold;
+  margin: 5px;
 }
 #fail{
   height: 20px;
   color: red;
   border-radius: 20px;
   font-weight: bold;
+  margin: 5px;
 }
 .processing{
   height: 20px;
