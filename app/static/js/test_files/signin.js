@@ -18,12 +18,9 @@ document.getElementById('signin').addEventListener('submit', function(e) {
         })
         .then(res => res.json())
         .then(data => {
-          let res = Object.values(data);
-          const access_token = res[0];
-          if (data.token === access_token) {
-            msg = "Login was successful";
-            document.getElementById('white').innerHTML = msg;
-            localStorage.setItem('token', access_token);
+          localStorage.setItem('token', data.token);
+          if (data.message === "Login was successful") {
+            document.getElementById('white').innerHTML = data.message;
             window.location.assign("/home");
           } else {
             let msg = Object.values(data);
@@ -31,6 +28,4 @@ document.getElementById('signin').addEventListener('submit', function(e) {
           }
 
         })
-      .catch(error => console.error("Error:", error));
-
   };

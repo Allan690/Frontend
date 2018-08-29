@@ -12,7 +12,7 @@ describe('signin',() => {
         </form>`;
         fetchMock = jest.spyOn(global,'fetch');
         fetchMock.mockImplementation(() =>Promise.resolve ({
-            json: () => Promise.resolve({message:"Your password was Incorrect, please double check it."})
+            json: () => Promise.resolve({message:"Login was successful"})
         }));
         assignMock = jest.spyOn(window.location , 'assign');
         assignMock.mockImplementation(() =>{});
@@ -21,6 +21,7 @@ describe('signin',() => {
     afterEach(() => {
         fetchMock.mockRestore();
         assignMock.mockRestore();
+        jest.resetModules()
     });
     it('fetch data and change the content of #white', async () =>{
         document.getElementById('submit').click();
@@ -39,8 +40,33 @@ describe('signin',() => {
 
         });
         await Promise.resolve().then();
+        expect(document.getElementById('white').innerHTML).toBe("Login was successful");
+        expect(assignMock).toHaveBeenCalledTimes(1);
+        expect(assignMock.mock.calls[0][0]).toBe('/home');
+    });
+    it('Login with wrong password', async () =>{
+      fetchMock = jest.spyOn(global,'fetch');
+      fetchMock.mockImplementation(() =>Promise.resolve ({
+          json: () => Promise.resolve({message:"Your password was Incorrect, please double check it."})
+      }));
+        document.getElementById('submit').click();
+        expect(fetchMock).toHaveBeenCalledTimes(1)
+        const fetchArgs = fetchMock.mock.calls[0];
+        expect(fetchArgs[0]).toBe('https://diaryapi-v2.herokuapp.com/mydiary/v1/auth/login')
+        await Promise.resolve().then();
         expect(document.getElementById('white').innerHTML).toBe("Your password was Incorrect, please double check it.");
     });
-
+    it('Login with wrong email', async () =>{
+      fetchMock = jest.spyOn(global,'fetch');
+      fetchMock.mockImplementation(() =>Promise.resolve ({
+          json: () => Promise.resolve({message:"User with email:'test@gmail.com' does not exist"})
+      }));
+        document.getElementById('submit').click();
+        expect(fetchMock).toHaveBeenCalledTimes(1)
+        const fetchArgs = fetchMock.mock.calls[0];
+        expect(fetchArgs[0]).toBe('https://diaryapi-v2.herokuapp.com/mydiary/v1/auth/login')
+        await Promise.resolve().then();
+        expect(document.getElementById('white').innerHTML).toBe("User with email:'test@gmail.com' does not exist");
+    });
 
 });

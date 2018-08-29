@@ -11,8 +11,8 @@ fetch(`${url}`, {
   .then(res => res.json())
   .then(data => {
     let msg = `Entry fetched Successuflly`;
-    document.getElementById("title").innerHTML = data[msg][2];
-    document.getElementById("date").innerHTML = data[msg][1];
-    document.getElementById("content").innerHTML = data[msg][3];
+    document.getElementById("title").innerHTML = data[msg]
+    document.getElementById("date").innerHTML = data[msg]
+    document.getElementById("content").innerHTML = data[msg]
 
   });

@@ -33,6 +33,5 @@ const signUp = (data) => {
       }
 
     })
-    .catch(error => console.error("Error:", error));
 
 }

@@ -33,6 +33,4 @@ fetch('https://diaryapi-v2.herokuapp.com/mydiary/v1/entries',{
                 document.getElementById("fail").innerHTML = data.message;
             }
         })
-// catches any error that may occur.
-        .catch(error => console.error(error));
     };

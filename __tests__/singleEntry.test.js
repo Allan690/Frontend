@@ -1,10 +1,10 @@
 describe("single", () => {
   let fetchMock;
   beforeEach(() => {
-    document.body.innerHTML += `
+    document.body.innerHTML += `<div>
       <h1 id="title"></h1>
-      <p id="date"></p>
-      <h2 id="content"></h2>
+      <h4 id="date"></h4>
+      <p id="content"></p></div>
     `;
     fetchMock = jest.spyOn(global, 'fetch');
     fetchMock.mockImplementation(() => Promise.resolve({
