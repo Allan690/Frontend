@@ -5,11 +5,13 @@
   "main": "sum.js",
   "scripts": {
     "test": "jest",
-    "watch": "jest --watch *test.js"
+    "watch": "jest --watch *test.js",
+    "coveralls":  "jest --coverage && cat ./coverage/lcov.info | coveralls"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "coveralls": "^3.0.2",
     "fetch-mock": "^6.5.2",
     "jest": "^23.5.0",
     "jest-environment-jsdom": "^23.4.0",
