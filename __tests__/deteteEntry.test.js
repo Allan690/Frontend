@@ -27,6 +27,7 @@ it("deletes an entry and redirects to home page", async () =>{
     window.history.pushState({}, 'delete', 'https://diaryapi-v2.herokuapp.com/mydiary/v1/entries/1');
     entryId = Number(location.pathname.match(/\d+/)[0]);
     document.getElementById('delete').click();
+    const token = localStorage.getItem("token");
     expect(fetchMock).toHaveBeenCalledTimes(1);
     const fetchArgs = fetchMock.mock.calls[0];
     expect(fetchArgs[0]).toBe('https://diaryapi-v2.herokuapp.com/mydiary/v1/entries/1');
@@ -51,6 +52,7 @@ it("raises an error ", async () =>{
     }));
     window.history.pushState({}, 'delete', 'https://diaryapi-v2.herokuapp.com/mydiary/v1/entries/1');
     entryId = Number(location.pathname.match(/\d+/)[0]);
+    const token = localStorage.getItem("token");
     document.getElementById('delete').click();
     expect(fetchMock).toHaveBeenCalledTimes(1);
     const fetchArgs = fetchMock.mock.calls[0];
