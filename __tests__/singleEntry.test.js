@@ -10,7 +10,6 @@ describe("single", () => {
     fetchMock.mockImplementation(() => Promise.resolve({
       json: () => ({message:"Entry fetched Successuflly"})
     }));
-    // require('..app/static/js/test_files/single');
     require('../app/static/js/test_files/single');
   });
   afterEach(() => {

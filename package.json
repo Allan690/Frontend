@@ -24,6 +24,7 @@
   "jest": {
     "setupFiles": [
       "./setupJest.js"
-    ]
+    ],
+    "testURL": "https://diaryapi-v2.herokuapp.com/mydiary/v1/entries/1"
   }
 }
