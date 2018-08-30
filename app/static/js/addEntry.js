@@ -1,18 +1,16 @@
-token = localStorage.getItem("token");
-if(token === null){
-  window.location.href = '/signin';
-  }
-
-else {
-add = () => {
+token = localStorage.getItem('token')
+// Gets data from the form inputs if the user is authenticated.
 document.getElementById("entry").addEventListener("submit", function (e) {
     e.preventDefault();
-    data = {
+    const data = {
         title: document.getElementById("title").value,
         content: document.getElementById("content").value
     };
-
-token = localStorage.getItem("token");
+// Calls this function for entry processing
+    addEntry(data);
+  });
+// Sends the added entry to they server for processing.
+const addEntry = (data) => {
 fetch('https://diaryapi-v2.herokuapp.com/mydiary/v1/entries',{
   method:"POST",
   headers:{
@@ -21,35 +19,18 @@ fetch('https://diaryapi-v2.herokuapp.com/mydiary/v1/entries',{
   },
   body: JSON.stringify(data)
 
+
 })
         .then(res => res.json())
 
         .then(data => {
-            console.log(data.message)
             if(data.message === "successfully added"){
                 let msg = data.message;
-                document.getElementById("white").innerHTML = msg;
-                window.location.href = "/home";
+                document.getElementById("success").innerHTML = msg;
+                window.location.assign("/home");
             }
-            else{
-                let msg = Object.values(data);
-                document.getElementById("white").innerHTML = msg;
+            else if(data.message === "Title already exist, use a different one.") {
+                document.getElementById("fail").innerHTML = data.message;
             }
         })
-
-        .catch(error => console.error("Error:", error));
-
-  });
-}
-}
-
-
-
-
-
-
-
-
-
-
-
+    };

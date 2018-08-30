@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 <!-- start of form section -->
-<div class="text_centered" id="info"></div>
+<div class="text_centered " id="success"></div>
+<div class="text_centered " id="fail"></div>
 <p id="white" class="text_centered"></p>
 <form class="container" id="modify">
   <h2 class="text_centered">Modify Entry</h2>
@@ -16,7 +17,7 @@
 </form>
 <div class="spacing">
 </div>
-<script type="text/javascript" src="{{ url_for('static', filename='js/modify.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/modifyEntry.js') }}"></script>
 
 <!-- end of form section -->
 {% endblock %}

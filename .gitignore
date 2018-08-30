@@ -104,3 +104,6 @@ venv.bak/
 .mypy_cache/
 # vscode
 .vscode
+node_modules/
+coverage/
+package-lock.json

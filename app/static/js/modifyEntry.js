@@ -1,14 +1,10 @@
-token = localStorage.getItem("token");
-if(token === null){
-  window.location.href = '/signin';
-  }
-else {
+const token = localStorage.getItem('token');
+const entryId = Number(location.pathname.match(/\d+/)[0]);
 
 document.addEventListener('DOMContentLoaded', () => {
     title = document.getElementById('title');
     content = document.getElementById('content');
     const token = localStorage.getItem("token");
-    const entryId = Number(location.pathname.match(/\d+/)[0])
     const url = `https://diaryapi-v2.herokuapp.com/mydiary/v1/entries/${entryId}`;
     fetch(`${url}`,{
       method:"GET",
@@ -24,14 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
             title.value = data[entry][2];
             content.value = data[entry][3];
         })
-    .catch(err => console.log(err));
 });
 
-    modify = () => {
+   const modify = () => {
     document.getElementById("modify").addEventListener("submit", (event) => {
         event.preventDefault();
-    const token = localStorage.getItem("token");
-    const entryId = Number(location.pathname.match(/\d+/)[0])
     const url = `https://diaryapi-v2.herokuapp.com/mydiary/v1/entries/${entryId}`;
     const title = document.getElementById('title');
     const content = document.getElementById('content');
@@ -53,19 +46,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     .then(res =>res.json())
     .then(data => {
-        console.log(data.message)
         if (data.message === "Entry Updated successfully"){
-        let msg = data.message;
-        window.location.href = `/detail/${entryId}`;
+        document.getElementById("success").innerHTML = data.message;;
+        window.location.assign(`/detail/${entryId}`);
         }
         else
         {
-          let msg = Object.values(data);
-          console.log(msg)
-          document.getElementById("white").innerHTML = msg;
+          document.getElementById("fail").innerHTML = Object.values(data);
         }
         })
-        .catch(err => console.log(err));
+        .catch(err => console.error(err));
     });
-    }
-}
+    };
+    module.exports = modify

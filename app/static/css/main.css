@@ -54,7 +54,7 @@ a:hover {
 }
 
 .spacing {
-  margin: 20px;
+  margin: 15px;
   padding-bottom: 5px;
 }
 
@@ -242,7 +242,7 @@ button {
   color: #fff;
   border: 1px solid #3366cc;
   border-radius: 10px;
-  box-shadow: : 6px 6px 5px #999;
+  box-shadow: 6px 6px 5px #999;
 }
 
 button:hover {
@@ -288,4 +288,29 @@ input, textarea, select {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+.info{
+  color: blue;
+}
+
+#success{
+  height: 20px;
+  color: blue;
+  border-radius: 20px;
+  font-weight: bold;
+  margin: 5px;
+}
+#fail{
+  height: 20px;
+  color: red;
+  border-radius: 20px;
+  font-weight: bold;
+  margin: 5px;
+}
+.processing{
+  height: 20px;
+  color: green;
+  border-radius: 20px;
+  font-weight: bold;
 }

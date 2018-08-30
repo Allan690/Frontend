@@ -1,8 +1,3 @@
-token = localStorage.getItem("token");
-if(token === null){
-  window.location.href = '/signin';
-  }
- else{
   deleteEntry = () => {
     if (!confirm(`Are you sure want to delete this entry?`))
              return false;
@@ -20,15 +15,12 @@ if(token === null){
     .then(res => res.json())
     .then(data => {
         if (data.message == "Your entry was successfully deleted"){
-            let msg = "Entry was deleted from your diary";
-            document.getElementById('white').innerHTML = msg;
-            window.location.href = '/home';
+            document.getElementById('success').innerHTML =data.message;
+            window.location.assign('/home');
         }
         else {
-          let msg = Object.values(data);
-          document.getElementById("white").innerHTML = msg;
+          document.getElementById("fail").innerHTML = Object.values(data);
         }
 }).catch(err => console.log(err));
-}
-}
-}
+}};
+
