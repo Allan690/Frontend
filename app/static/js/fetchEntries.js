@@ -1,4 +1,4 @@
-token = localStorage.getItem("token");
+const token = localStorage.getItem("token");
 fetch('https://diaryapi-v2.herokuapp.com/mydiary/v1/entries', {
     method: "GET",
     headers: {

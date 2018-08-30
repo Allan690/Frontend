@@ -24,7 +24,7 @@ afterEach(()=>{
     jest.resetModules();
 });
 it("deletes an entry and redirects to home page", async () =>{
-    window.history.pushState({}, 'delete', 'https://diaryapi-v2.herokuapp.com/mydiary/v1/entries/1');
+    window.history.pushState({}, "delete", "https://diaryapi-v2.herokuapp.com/mydiary/v1/entries/1");
     entryId = Number(location.pathname.match(/\d+/)[0]);
     document.getElementById('delete').click();
     const token = localStorage.getItem("token");
@@ -45,7 +45,7 @@ it("deletes an entry and redirects to home page", async () =>{
         expect(document.getElementById('success').innerHTML).toBe('Your entry was successfully deleted');
 });
 
-it("raises an error ", async () =>{
+it("raises an error ", async () => {
     fetchMock = jest.spyOn(global, 'fetch');
     fetchMock.mockImplementation(() =>Promise.resolve({
         json :() =>({message:"An error occured"})

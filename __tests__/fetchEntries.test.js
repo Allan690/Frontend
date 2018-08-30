@@ -9,7 +9,7 @@ describe("fetch", () => {
     fetchMock.mockImplementation(() => Promise.resolve({
       json: () => ({message:"Your diary is empty"})
     }));
-    require('../app/static/js/fetchEntries')
+    require('../app/static/js/fetchEntries');
   });
 
   afterEach(() => {
@@ -17,6 +17,7 @@ describe("fetch", () => {
     jest.resetModules();
   });
   it('should fetch data and change the content of #total', async () => {
+    const token = localStorage.getItem("token");
     expect(fetchMock).toHaveBeenCalledTimes(1);
     const fetchArgs = fetchMock.mock.calls[0];
     expect(fetchArgs[0]).toBe('https://diaryapi-v2.herokuapp.com/mydiary/v1/entries');

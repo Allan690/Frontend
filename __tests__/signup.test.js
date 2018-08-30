@@ -16,7 +16,7 @@ describe('singup', () => {
     `;
     fetchMock = jest.spyOn(global, 'fetch');
      fetchMock.mockImplementation(() => Promise.resolve({
-      json: () => Promise.resolve({ message: 'Your account was created' })
+      json: () => Promise.resolve({ message: "Your account was created" })
     }));
     assignMock = jest.spyOn(window.location, 'assign');
     assignMock.mockImplementation(() => {});

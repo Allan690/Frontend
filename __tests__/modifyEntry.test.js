@@ -30,9 +30,9 @@ describe("Modify entry", () => {
         const token = localStorage.getItem("token");
         entryId = Number(location.pathname.match(/\d+/)[0]);
         window.history.pushState({}, 'delete', 'https://diaryapi-v2.herokuapp.com/mydiary/v1/entries/${entryId}');
-        document.getElementById('update').click();
+        document.getElementById("update").click();
         expect(fetchMock).toHaveBeenCalledTimes(1);
-        fetchArgs = fetchMock.mock.calls[0];
+        const fetchArgs = fetchMock.mock.calls[0];
         expect(fetchArgs[0]).toBe('https://diaryapi-v2.herokuapp.com/mydiary/v1/entries/1');
         expect(fetchArgs[1]).toEqual({
           method: "PUT",
@@ -83,7 +83,7 @@ describe("Modify entry", () => {
         fetchMock.mockImplementation(() => Promise.resolve({
         json: () => ({massage:"Entry fetched Successuflly"})
     }));
-        require('../app/static/js/modifyEntry')
+        require('../app/static/js/modifyEntry');
         window.document.dispatchEvent(new Event("DOMContentLoaded", {
             bubbles: true,
             cancelable: true

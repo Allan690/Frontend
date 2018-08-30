@@ -1,4 +1,4 @@
-const token = localStorage.getItem('token');
+const token = localStorage.getItem("token");
 const entryId = Number(location.pathname.match(/\d+/)[0]);
 
 document.addEventListener('DOMContentLoaded', () => {
