@@ -1,4 +1,5 @@
 # Online Journal
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5ad5159f91824fc2b20143e228c12722)](https://app.codacy.com/app/charisschomba/Frontend?utm_source=github.com&utm_medium=referral&utm_content=charisschomba/Frontend&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://travis-ci.org/charisschomba/Frontend.svg?branch=develop)](https://travis-ci.org/charisschomba/Frontend)
 [![Coverage Status](https://coveralls.io/repos/github/charisschomba/Frontend/badge.svg)](https://coveralls.io/github/charisschomba/Frontend)
 
