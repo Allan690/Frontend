@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
             title.value = data[entry][2];
             content.value = data[entry][3];
         })
-    .catch(err => console.log(err));
 });
 
    const modify = () => {
@@ -47,19 +46,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     .then(res =>res.json())
     .then(data => {
-        console.log(data.message)
         if (data.message === "Entry Updated successfully"){
-        let msg = data.message;
-        document.getElementById("success").innerHTML = msg;
-        window.location.href = `/detail/${entryId}`;
+        document.getElementById("success").innerHTML = data.message;;
+        window.location.assign(`/detail/${entryId}`);
         }
         else
         {
-          let msg = Object.values(data);
-          console.log(msg)
-          document.getElementById("fail").innerHTML = msg;
+          document.getElementById("fail").innerHTML = Object.values(data);
         }
         })
         .catch(err => console.error(err));
     });
     };
+    module.exports = modify
